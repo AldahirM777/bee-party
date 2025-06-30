@@ -1,0 +1,61 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+//* Temporal
+img {
+  width: 100px;
+}
+//*
+
+.img-float {
+  position: absolute;
+  width: 50px;
+}
+
+.img-header {
+  position: absolute;
+  width: 100%;
+  height: 15vh;
+  top: 0;
+  left: 0;
+}
+
+.img-footer{
+  position: absolute;
+  width: 100%;
+  height: 15vh;
+  bottom: 0;
+  left: 0;
+}
+
+section {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.start {
+  margin-top: 15vh;
+  padding: 20px 0;
+
+  h1 {
+    margin-bottom: 2rem;
+    font-size: 3rem;
+    text-align: center;
+    color: gold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+}

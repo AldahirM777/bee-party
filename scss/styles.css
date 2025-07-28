@@ -1,7 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&family=Quicksand:wght@400;500&display=swap");
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+.container-date p,
+.container-names p,
+.container-ubi h3,
+.container-ubi a {
+  font-family: "Quicksand", sans-serif;
 }
 
 .float-imgs {
@@ -10,7 +18,6 @@
 }
 .float-imgs .img-float {
   position: absolute;
-  width: 50px;
 }
 .float-imgs .img-cloud {
   position: fixed;
@@ -33,10 +40,97 @@
 }
 .float-imgs .img-footer {
   position: fixed;
+  bottom: 0;
   width: 100%;
   height: 15vh;
-  bottom: 0;
-  left: 0;
+  z-index: 1;
+}
+.float-imgs .img-flower {
+  position: fixed;
+  bottom: 2vh;
+  z-index: 2;
+  animation: floatFlower 6s ease-in-out infinite;
+  pointer-events: none;
+}
+.float-imgs .img-flower1 {
+  left: 4%;
+  width: 28px;
+  animation-delay: 0s;
+}
+.float-imgs .img-flower2 {
+  left: 10%;
+  width: 35px;
+  animation-delay: 1s;
+  bottom: 3vh;
+}
+.float-imgs .img-flower3 {
+  left: 17%;
+  width: 26px;
+  animation-delay: 2s;
+}
+.float-imgs .img-flower4 {
+  left: 24%;
+  width: 33px;
+  animation-delay: 1.5s;
+}
+.float-imgs .img-flower5 {
+  left: 30%;
+  width: 29px;
+  animation-delay: 0.5s;
+  bottom: 2.5vh;
+}
+.float-imgs .img-flower6 {
+  left: 38%;
+  width: 32px;
+  animation-delay: 2.5s;
+}
+.float-imgs .img-flower7 {
+  left: 45%;
+  width: 25px;
+  animation-delay: 1s;
+}
+.float-imgs .img-flower8 {
+  left: 52%;
+  width: 30px;
+  animation-delay: 0s;
+  bottom: 3.2vh;
+}
+.float-imgs .img-flower9 {
+  left: 60%;
+  width: 34px;
+  animation-delay: 2s;
+}
+.float-imgs .img-flower10 {
+  left: 67%;
+  width: 27px;
+  animation-delay: 1.2s;
+}
+.float-imgs .img-flower11 {
+  left: 73%;
+  width: 32px;
+  animation-delay: 0.8s;
+}
+.float-imgs .img-flower12 {
+  left: 80%;
+  width: 30px;
+  animation-delay: 1.6s;
+  bottom: 2.8vh;
+}
+.float-imgs .img-flower13 {
+  left: 87%;
+  width: 28px;
+  animation-delay: 2.2s;
+}
+.float-imgs .img-flower14 {
+  left: 93%;
+  width: 31px;
+  animation-delay: 0.3s;
+}
+.float-imgs .img-flower15 {
+  left: 97%;
+  width: 26px;
+  animation-delay: 1.7s;
+  bottom: 2.6vh;
 }
 
 main {
@@ -54,106 +148,139 @@ main .background {
   z-index: -1;
   background: linear-gradient(to bottom, #a1d8f2 10%, #fff 30%, #fff 70%, #66ac1c 150%);
 }
-
-section {
-  width: 80%;
+main section {
+  width: 75%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-top: 50px;
 }
-
-.start {
+main .start {
   margin-top: 15vh;
   padding: 20px 0;
 }
-.start h1 {
+main .start h1 {
   margin: 2rem 0.5rem;
+  font-family: "Fredoka One", cursive;
   z-index: 2;
   font-size: 3rem;
   text-align: center;
   color: gold;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
-.start h2 {
+main .start h2 {
+  font-family: "Fredoka One", cursive;
   z-index: 2;
   font-size: 2rem;
   color: #ff69b4;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
-
-.container-date {
-  height: 30vh;
-  padding: 20px;
-  margin-top: 200px;
-  border-radius: 10px;
-  text-align: center;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+main .div {
+  z-index: -1;
 }
-.container-date p {
+main .container-date {
+  background: linear-gradient(to bottom, #ffe3f3, #f9c5d1);
+  border: 4px dashed #ffb6c1;
+  animation: popIn 0.8s ease;
+  margin-top: 100px;
+}
+main .container-date p {
+  font-family: "Quicksand", sans-serif;
   font-size: 1.5rem;
-  margin: 5px 0;
-  color: #333;
+  color: #ff69b4;
 }
-.container-date p.day1 {
-  font-weight: bold;
-  color: #ff7f50;
+main .container-date p.day1 {
+  color: #ff69b4;
 }
-.container-date p.day2 {
+main .container-date p.day2 {
   font-size: 2.5rem;
-  color: #d2691e;
+  color: #ff1493;
 }
-.container-date p.Myear {
+main .container-date p.Myear {
   font-style: italic;
-  color: #555;
+  color: #d87093;
 }
-
-.container-names {
-  background-color: #000;
-  background-color: #fefbd8;
-  margin-top: 2rem;
-  padding: 15px 20px;
-  border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+main .container-names {
+  background: linear-gradient(135deg, #fefbd8, #ffecb3);
+  border: 3px dotted #f48fb1;
+  animation: float 3s ease-in-out infinite;
 }
-.container-names .names p {
-  font-size: 1.2rem;
-  margin: 5px 0;
-  color: #4b0082;
+main .container-names .names p {
+  color: #ba68c8;
+  font-size: 1.4rem;
 }
-.container-names .names p strong {
-  color: #8b0000;
+main .container-names .names p strong {
+  color: #e91e63;
 }
-.container-names img {
+main .container-names img {
   width: 100px;
   margin-top: 10px;
+  animation: bounceIn 0.6s ease;
+}
+main .container-ubi {
+  background: linear-gradient(to right, #e0f7fa, #ffe0f0);
+  border: 3px dashed #64b5f6;
+  animation: popIn 0.8s ease;
+  margin-bottom: 100px;
+}
+main .container-ubi h3 {
+  font-size: 1.6rem;
+  color: #7b1fa2;
+}
+main .container-ubi a {
+  color: #ff4081;
+}
+main .container-ubi a:hover {
+  text-decoration: underline;
+  color: #ec407a;
+}
+main .container-ubi img {
+  width: 100px;
+  animation: float 4s ease-in-out infinite;
+}
+main #beeEnd {
+  bottom: 0;
+  left: 0;
+  width: 80%;
 }
 
-.container-ubi {
-  background-color: #000;
-  background-color: #e0f7fa;
-  margin-top: 2rem;
-  margin-bottom: 20vh;
-  height: 30vh;
-  padding: 20px;
-  border-radius: 10px;
-  text-align: center;
+@keyframes floatFlower {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-5px) rotate(2deg);
+  }
 }
-.container-ubi img {
-  width: 120px;
-  margin-bottom: 10px;
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
-.container-ubi h3 {
-  font-size: 1.5rem;
-  color: #00796b;
-  margin-bottom: 8px;
+@keyframes popIn {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
-.container-ubi a {
-  font-size: 1.2rem;
-  color: #0288d1;
-  text-decoration: none;
-  font-weight: bold;
-}
-.container-ubi a:hover {
-  text-decoration: underline;
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  70% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
 }/*# sourceMappingURL=styles.css.map */

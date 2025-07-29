@@ -7,6 +7,14 @@
     <link rel="stylesheet" href="/scss/styles.css" />
   </head>
   <body>
+    <div class="error-width">
+      <h1>¡Ups!</h1>
+      <p>
+        Parece que la pantalla es muy grande para mostrar esta página. Por
+        favor, intenta con una pantalla más pequeña.
+      </p>
+      <img src="/imgs/bee1.png" alt="Bee Image" />
+    </div>
     <main>
       <!-- Colores de fondo -->
       <div class="background"></div>
@@ -17,20 +25,12 @@
         <img class="img-float img-cloud" src="imgs/cloud.png" />
         <!-- IMG bee1 -->
         <img class="img-float img-bee1" src="/imgs/bee1.png" />
+
         <!-- IMG rein -->
         <img class="img-float img-reinbow" src="imgs/rainbow.png" />
 
         <!-- Imagen footer -->
-        <img class="img-footer" src="imgs/grass.png" />
-
-        <!-- IMGs flowers -->
-        <img class="img-flower img-flower1" src="/imgs/flower1.png" />
-        <img class="img-flower img-flower3" src="/imgs/flower1.png" />
-        <img class="img-flower img-flower5" src="/imgs/flower1.png" />
-        <img class="img-flower img-flower7" src="/imgs/flower1.png" />
-        <img class="img-flower img-flower9" src="/imgs/flower1.png" />
-        <img class="img-flower img-flower11" src="/imgs/flower1.png" />
-        <img class="img-flower img-flower13" src="/imgs/flower1.png" />
+        <img class="img-footer" src="imgs/grass2.png" />
       </div>
 
       <!-- Inicio -->
@@ -44,15 +44,20 @@
         <h2 class="title2" id="titleSubMain">Isabella</h2>
       </section>
 
+      <!-- sección animada de transición -->
+      <div class="party-curtain">
+        <!-- Poner cosas de la abejita y con más color y globos y con un efecto de animacion hacia abajo -->
+      </div>
+
       <!-- Fecha del evento -->
-      <section class="div container-date">
+      <section class="sectionX container-date">
         <p class="day1">Sábado</p>
         <p class="day2">15</p>
         <p class="Myear">Noviembre 2025</p>
       </section>
 
       <!-- Nombres de los papás -->
-      <section class="div container-names">
+      <section class="sectionX container-names">
         <div class="names">
           <p><strong>PAPÁ: </strong>Osmar</p>
           <p><strong>MAMÁ: </strong>Danna</p>
@@ -61,13 +66,13 @@
       </section>
 
       <!-- Ubicación del evento -->
-      <section class="div container-ubi">
+      <section class="sectionX container-ubi">
         <h3>Dirección:</h3>
         <a href="#" target="_blank">Salón Diamante</a>
       </section>
 
       <!-- IMG bee end -->
-      <img id="beeEnd" src="imgs/bee4.png" />
+      <img class="beeEnd" src="imgs/bee4.png" />
     </main>
     <script src="/scrips.js"></script>
   </body>

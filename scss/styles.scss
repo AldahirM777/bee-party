@@ -18,32 +18,12 @@ $body-font: "Quicksand", sans-serif;
 
 .float-imgs {
   width: 100%;
-  position: relative;
-
-  .img-float {
-    position: absolute;
-  }
 
   .img-cloud {
     position: fixed;
     width: 100%;
     height: 25vh;
     z-index: 1;
-  }
-
-  .img-reinbow {
-    width: 400px;
-    margin-top: 27vh;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
-  .img-bee1 {
-    position: absolute;
-    width: 150px;
-    left: 50%;
-    transform: translateX(-50%) translateY(-5vh);
-    z-index: 2;
   }
 
   //IMG footer
@@ -80,7 +60,8 @@ $body-font: "Quicksand", sans-serif;
   }
 
   img {
-    width: 150px;
+    width: 50%;
+    max-width: 300px;
     margin-top: 1rem;
     animation: bounceIn 0.6s ease;
   }
@@ -114,114 +95,60 @@ main {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 50px;
   }
 
   .start {
-    margin-top: 15vh;
-    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    z-index: 2;
 
-    h1 {
-      margin: 2rem 0.5rem;
-      font-family: $title-font;
-
+    .img-bee1 {
+      width: 150px;
       z-index: 2;
-      font-size: 3rem;
-      text-align: center;
-      color: gold;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     }
 
-    h2 {
-      font-family: $title-font;
-      z-index: 2;
-      font-size: 2rem;
-      color: #ff69b4;
-      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    .img-reinbow {
+      width: 100%;
     }
-  }
 
-  .sectionX {
-    z-index: -1;
-  }
+    .letters {
+      display: flex;
+      justify-content: center;
 
-  .container-date {
-    margin-top: 100px;
-    background: linear-gradient(to bottom, #ffe3f3, #f9c5d1);
-
-    p {
-      font-family: $body-font;
-      font-size: 1.5rem;
-      color: #ff69b4;
-
-      &.day1 {
-        color: #ff69b4;
-      }
-
-      &.day2 {
+      span {
+        font-family: $title-font;
         font-size: 2.5rem;
         color: #ff1493;
+        margin: 0 2px;
+        display: inline-block;
+        animation: wave 3.5s ease-in-out infinite;
+
+        &:nth-child(odd) {
+          color: #ff69b4;
+        }
+        &:nth-child(even) {
+          color: #d87093;
+        }
       }
 
-      &.Myear {
-        font-style: italic;
-        color: #d87093;
+      @for $i from 1 through 11 {
+        .letter#{$i} {
+          animation-delay: #{($i - 1) * 0.1}s;
+        }
       }
     }
   }
 
-  .container-names {
-    background: linear-gradient(135deg, #fefbd8, #ffecb3);
-    border: 3px dotted #f48fb1;
-    animation: float 3s ease-in-out infinite;
-
-    .names p {
-      color: #ba68c8;
-      font-size: 1.4rem;
-
-      strong {
-        color: #e91e63;
-      }
-    }
-
-    img {
-      width: 100px;
-      margin-top: 10px;
-      animation: bounceIn 0.6s ease;
-    }
-  }
-
-  .container-ubi {
-    background: linear-gradient(to right, #e0f7fa, #ffe0f0);
-    border: 3px dashed #64b5f6;
-    animation: popIn 0.8s ease;
-    margin-bottom: 5vh;
-
-    h3 {
-      font-size: 1.6rem;
-      color: #7b1fa2;
-    }
-
-    a {
-      color: #ff4081;
-
-      &:hover {
-        text-decoration: underline;
-        color: #ec407a;
-      }
-    }
-
-    img {
-      width: 100px;
-      animation: float 4s ease-in-out infinite;
-    }
+  .party-curtain {
+    height: 100vh;
   }
 
   .beeEnd {
-    bottom: 0;
-    left: 0;
-    margin-bottom: 25px;
-    width: 80%;
+    margin-bottom: 20px;
+    width: 75%;
   }
 }
 
@@ -232,6 +159,16 @@ main {
   }
   50% {
     transform: translateY(-10px);
+  }
+}
+
+@keyframes wave {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
   }
 }
 

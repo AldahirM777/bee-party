@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Chavela</title>
+    <title>💛 ISABELLA 🐝</title>
     <link rel="stylesheet" href="/css/styles.css" />
   </head>
   <body>
@@ -15,7 +15,38 @@
       </p>
       <img src="/imgs/bee1.png" alt="Bee Image" />
     </div>
-    <main>
+
+    <canvas id="fireworksCanvas"></canvas>
+
+    <div id="heroPage">
+      <div class="containerMain">
+        <div class="containerImgs">
+          <img src="/imgs/bee2.png" alt="Bee Image" id="bee1" />
+          <img src="/imgs/bee3.png" alt="Bee Image" id="bee2" />
+          <img src="/imgs/bee4.png" alt="Bee Image" id="bee3" />
+          <div id="tsparticles"></div>
+        </div>
+
+        <div id="HeroContainerInfo">
+          <h1 id="HeroTitle">ISABELLA</h1>
+          <div id="HeroTitle2">
+            <span class="span1">I</span>
+            <span class="span2">S</span>
+            <span class="span3">A</span>
+            <span class="span4">B</span>
+            <span class="span5">E</span>
+            <span class="span6">L</span>
+            <span class="span7">L</span>
+            <span class="span8">A</span>
+          </div>
+          <button id="btnStart">
+            <div id="loader"></div>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <main id="mainPage">
       <!-- Colores de fondo -->
       <div class="background"></div>
 
@@ -30,21 +61,22 @@
 
       <!-- Inicio -->
       <section class="start">
-        <!-- IMG bee1 -->
-        <img class="img-float img-bee1" src="/imgs/bee1.png" />
-
-        <!-- IMG rein -->
-        <img class="img-float img-reinbow" src="imgs/rainbow2F.png" />
-
         <div id="titleMain" class="letters">
-          <span class="letter1">I</span>
-          <span class="letter2">S</span>
-          <span class="letter3">A</span>
-          <span class="letter4">B</span>
-          <span class="letter5">E</span>
-          <span class="letter6">L</span>
-          <span class="letter7">L</span>
-          <span class="letter8">A</span>
+          <span class="letter1">V</span>
+          <span class="letter2">E</span>
+          <span class="letter3">N</span>
+          <span class="letter4"></span>
+          <span class="letter5">A</span>
+          <span class="letter6"></span>
+          <span class="letter7">C</span>
+          <span class="letter8">E</span>
+          <span class="letter9">L</span>
+          <span class="letter10">E</span>
+          <span class="letter11">B</span>
+          <span class="letter12">R</span>
+          <span class="letter13">A</span>
+          <span class="letter14">R</span>
+          <span class="letter15">!</span>
         </div>
       </section>
 
@@ -102,10 +134,51 @@
  -->
 
       <section class="info">
-        
+        <!-- IMG bee1 -->
+        <img class="img-float img-bee1" src="/imgs/bee1.png" />
+
+        <!-- IMG rein -->
+        <img class="img-float img-reinbow" src="imgs/cumple.png" />
+
+        <div class="container-date">
+          <div class="date">
+            <p class="borders day">Sábado</p>
+            <p class="number">15</p>
+            <p class="borders month">Noviembre</p>
+          </div>
+          <p class="time">De 6pm a 9pm</p>
+        </div>
+
+        <div class="container-imgs">
+          <img class="img-float img1" src="imgs/panal.png" />
+          <img class="img-float img2" src="imgs/flower5.png" />
+          <img class="img-float img3" src="imgs/flower5.png" />
+        </div>
+
+        <!--? Implementar animación de click here! -->
+        <h2>Ubicación</h2>
+        <a class="location" href="https://maps.app.goo.gl/LMiqKfZoZmjU2SMc7">
+          Salon Diamante
+        </a>
       </section>
 
-      <!-- IMG bee end -->
+      <div class="music">
+        <button id="musicButton" aria-label="Toggle Music">
+          <svg
+            id="musicIcon"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+          >
+            <!-- Ícono de pausa por defecto -->
+            <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
+          </svg>
+        </button>
+
+        <audio id="audio" src="audio/music.mp3"></audio>
+      </div>
+
       <img class="beeEnd" src="imgs/bee4.png" />
     </main>
     <script src="/scripts.js"></script>

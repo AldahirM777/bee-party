@@ -409,7 +409,6 @@ main .info .container-date {
   justify-content: center;
   margin: 20px 0;
   font-family: "Quicksand", sans-serif;
-  color: #333;
   width: 100%;
 }
 main .info .container-date .date {
@@ -418,7 +417,7 @@ main .info .container-date .date {
   justify-content: center;
   font-weight: bold;
   color: #ff69b4;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   gap: 1rem;
   width: 100%;
   margin: 1rem 0;
@@ -427,6 +426,7 @@ main .info .container-date .date {
 main .info .container-date .date .borders {
   border-top: 2px solid #ff69b4;
   border-bottom: 2px solid #ff69b4;
+  border-radius: 3px;
   padding: 5px 10px;
 }
 main .info .container-date .date .day {
@@ -442,12 +442,6 @@ main .info .container-date .date .number {
 main .info .container-date .date .month {
   width: 35%;
 }
-main .info .container-date .time {
-  font-weight: bold;
-  font-size: 2rem;
-  color: #eb92c5;
-  margin: 1rem 0;
-}
 main .info .container-imgs {
   position: relative;
   width: 100%;
@@ -461,16 +455,16 @@ main .info .container-imgs .img-float.img1 {
   animation: none;
   width: 25%;
   z-index: -1;
-  transform: translateY(-6.5rem);
+  transform: translateY(-1.5rem);
 }
 main .info .container-imgs .img-float.img2 {
   left: 5%;
   animation-delay: 2s;
-  transform: translateY(-3rem);
+  animation: float 5s ease-in-out infinite;
 }
 main .info .container-imgs .img-float.img3 {
   right: 5%;
-  transform: translateY(6rem);
+  animation: floatFlowerSpecial 5s ease-in-out infinite;
 }
 main .info h2 {
   font-family: "Fredoka One", cursive;
@@ -480,8 +474,10 @@ main .info h2 {
 }
 main .info .location {
   font-weight: bold;
-  font-size: 1.5rem;
+  font-family: "Quicksand", sans-serif;
+  font-size: 1.3rem;
   color: #ad95dd;
+  animation: btnanimation 3s ease-in-out infinite;
 }
 main .music {
   display: flex;
@@ -508,8 +504,9 @@ main .music audio {
 }
 main .beeEnd {
   width: 45%;
-  margin-bottom: 2vh;
+  margin-bottom: 1vh;
   margin-right: 35%;
+  animation: floatBeeSpecial 5s ease-in-out infinite;
 }
 
 @keyframes flyAllScreen {
@@ -558,6 +555,41 @@ main .beeEnd {
     opacity: 1;
   }
 }
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+@keyframes floatBeeSpecial {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+@keyframes floatFlowerSpecial {
+  0%, 100% {
+    transform: translateY(9rem);
+  }
+  50% {
+    transform: translateY(11rem);
+  }
+}
+@keyframes btnanimation {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 @keyframes wave {
   0%, 100% {
     transform: translateY(0);
@@ -568,6 +600,9 @@ main .beeEnd {
 }
 @media (min-width: 600px) {
   main {
+    display: none;
+  }
+  #heroPage {
     display: none;
   }
   .error-width {

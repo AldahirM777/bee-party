@@ -425,7 +425,6 @@ main {
       justify-content: center;
       margin: 20px 0;
       font-family: $body-font;
-      color: #333;
       width: 100%;
 
       .date {
@@ -434,7 +433,7 @@ main {
         justify-content: center;
         font-weight: bold;
         color: #ff69b4;
-        font-size: 1.5rem;
+        font-size: 1.3rem;
         gap: 1rem;
         width: 100%;
         margin: 1rem 0;
@@ -443,6 +442,7 @@ main {
         .borders {
           border-top: 2px solid #ff69b4;
           border-bottom: 2px solid #ff69b4;
+          border-radius: 3px;
           padding: 5px 10px;
         }
 
@@ -462,13 +462,6 @@ main {
           width: 35%;
         }
       }
-
-      .time {
-        font-weight: bold;
-        font-size: 1.5rem;
-        color: #eb92c5;
-        margin: 1rem 0;
-      }
     }
 
     .container-imgs {
@@ -484,18 +477,18 @@ main {
           animation: none;
           width: 25%;
           z-index: -1;
-          transform: translateY(-6.5rem);
+          transform: translateY(-1.5rem);
         }
 
         &.img2 {
           left: 5%;
           animation-delay: 2s;
-          transform: translateY(-3rem);
+          animation: float 5s ease-in-out infinite;
         }
 
         &.img3 {
           right: 5%;
-          transform: translateY(6rem);
+          animation: floatFlowerSpecial 5s ease-in-out infinite;
         }
       }
     }
@@ -509,8 +502,10 @@ main {
 
     .location {
       font-weight: bold;
+      font-family: $body-font;
       font-size: 1.3rem;
       color: #ad95dd;
+      animation: btnanimation 3s ease-in-out infinite;
     }
   }
 
@@ -543,8 +538,9 @@ main {
 
   .beeEnd {
     width: 45%;
-    margin-bottom: 2vh;
+    margin-bottom: 1vh;
     margin-right: 35%;
+    animation: floatBeeSpecial 5s ease-in-out infinite;
   }
 }
 
@@ -597,6 +593,48 @@ main {
   }
 }
 
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes floatBeeSpecial {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes floatFlowerSpecial {
+  0%,
+  100% {
+    transform: translateY(9rem);
+  }
+  50% {
+    transform: translateY(11rem);
+  }
+}
+
+@keyframes btnanimation {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 @keyframes wave {
   0%,
   100% {
@@ -611,6 +649,11 @@ main {
   main {
     display: none;
   }
+
+  #heroPage {
+    display: none;
+  }
+
   .error-width {
     display: flex;
   }

@@ -397,7 +397,9 @@ main .info {
 }
 main .info .img-bee1 {
   width: 40%;
-  transform: translateY(1.5rem);
+  transform: translateY(1.2rem);
+  animation: floatBeeSpecial 5s ease-in-out infinite;
+  animation-delay: 4s;
 }
 main .info .img-reinbow {
   width: 100%;
@@ -506,7 +508,7 @@ main .beeEnd {
   width: 45%;
   margin-bottom: 1vh;
   margin-right: 35%;
-  animation: floatBeeSpecial 5s ease-in-out infinite;
+  animation: floatBeeFlowerSpecial 5s ease-in-out infinite;
 }
 
 @keyframes flyAllScreen {
@@ -563,12 +565,20 @@ main .beeEnd {
     transform: translateY(-20px);
   }
 }
-@keyframes floatBeeSpecial {
+@keyframes floatBeeFlowerSpecial {
   0%, 100% {
     transform: translateY(0);
   }
   50% {
     transform: translateY(-5px);
+  }
+}
+@keyframes floatBeeSpecial {
+  0%, 100% {
+    transform: translateY(1.5rem);
+  }
+  50% {
+    transform: translateY(0rem);
   }
 }
 @keyframes floatFlowerSpecial {

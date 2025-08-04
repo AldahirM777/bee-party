@@ -6,10 +6,9 @@ const imgStart = document.getElementById("imgStart");
 window.addEventListener("scroll", () => {
   const scrollY = window.scrollY;
 
-  const translateX = scrollY * 0.8;
-  const translateY = scrollY * 0.8;
+  const translateY = scrollY * 0.45;
 
-  imgStart.style.transform = `translate(${translateX}px, ${translateY}px)`;
+  imgStart.style.transform = `translateY(${translateY}px)`;
 
   const rect = imgStart.getBoundingClientRect();
 
@@ -76,7 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 //? programación del botón de la invitación
 btnStart.addEventListener("click", () => {
-  //! audio.play();
+  audio.play();
 
   const bee1 = document.querySelector("#bee1");
   const bee2 = document.querySelector("#bee2");

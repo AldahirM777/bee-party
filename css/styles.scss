@@ -9,16 +9,10 @@ $body-font: "Quicksand", sans-serif;
   box-sizing: border-box;
 }
 
-html{
-  ::-webkit-scrollbar{
+html {
+  ::-webkit-scrollbar {
     display: none;
   }
-}
-
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-  width: 100vw;
 }
 
 .float-imgs {
@@ -26,8 +20,7 @@ body {
 
   .img-cloud {
     position: fixed;
-    width: 100vw;
-    max-width: 100vw;
+    width: 100%;
     height: 19vh;
     z-index: 1;
   }
@@ -35,8 +28,6 @@ body {
   .img-footer {
     position: fixed;
     bottom: 0;
-    width: 100vw;
-    max-width: 100vw;
     width: 100%;
     height: 10vh;
     z-index: 1;
@@ -241,9 +232,6 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  position: relative;
-  width: 100vw;
-  max-width: 100vw;
 
   .background {
     position: fixed;
@@ -269,10 +257,8 @@ main {
     flex-direction: column;
     height: 100vh;
     width: 100%;
-    position: relative;
 
     img {
-      position: absolute;
       width: 100%;
     }
   }
@@ -575,6 +561,8 @@ main {
   }
 }
 
+//todos Debuging
+/*
 main {
   display: flex;
 }
@@ -582,6 +570,7 @@ main {
 #heroPage {
   display: none;
 }
+*/
 
 ///////////////////////////////////////////////////
 //? Animations from Section Curtain

@@ -9,12 +9,16 @@ $body-font: "Quicksand", sans-serif;
   box-sizing: border-box;
 }
 
-html {
-  ::-webkit-scrollbar {
-    width: 0;
+html{
+  ::-webkit-scrollbar{
+    display: none;
   }
+}
 
-  background-color: #fff0f5;
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  width: 100vw;
 }
 
 .float-imgs {
@@ -22,7 +26,8 @@ html {
 
   .img-cloud {
     position: fixed;
-    width: 100%;
+    width: 100vw;
+    max-width: 100vw;
     height: 19vh;
     z-index: 1;
   }
@@ -30,6 +35,8 @@ html {
   .img-footer {
     position: fixed;
     bottom: 0;
+    width: 100vw;
+    max-width: 100vw;
     width: 100%;
     height: 10vh;
     z-index: 1;
@@ -129,7 +136,7 @@ html {
     img#bee2 {
       display: none;
       width: 35%;
-      position: absolute;
+      position: fixed;
       animation: flyAllScreen 4s ease-in-out forwards;
       pointer-events: none;
       z-index: 5;
@@ -234,6 +241,9 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  position: relative;
+  width: 100vw;
+  max-width: 100vw;
 
   .background {
     position: fixed;
@@ -259,8 +269,10 @@ main {
     flex-direction: column;
     height: 100vh;
     width: 100%;
+    position: relative;
 
     img {
+      position: absolute;
       width: 100%;
     }
   }
@@ -373,10 +385,8 @@ main {
 
     .containerInfo {
       position: relative;
-      z-index: 2;
       text-align: center;
       padding: 6vh 2rem;
-      font-family: "Comic Sans MS", cursive;
       margin-top: 15vh;
 
       .info-card {
@@ -389,76 +399,18 @@ main {
         color: #633a27;
 
         h2 {
+          font-size: $title-font;
           font-size: 2rem;
           color: #d2691e;
           margin-bottom: 0.5rem;
         }
 
         p {
+          font-family: $body-font;
           font-size: 1.2rem;
           margin: 0.3rem 0;
         }
       }
-    }
-  }
-
-  @keyframes floatCurtain {
-    0% {
-      transform: translateY(0);
-    }
-    100% {
-      transform: translateY(-15px);
-    }
-  }
-
-  @keyframes floatSlow {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(20px);
-    }
-  }
-
-  @keyframes floatBalloon {
-    0%,
-    100% {
-      transform: translateY(0) rotate(0deg);
-    }
-    50% {
-      transform: translateY(-30px) rotate(5deg);
-    }
-  }
-
-  @keyframes twinkle {
-    0% {
-      opacity: 0.5;
-      transform: scale(1);
-    }
-    100% {
-      opacity: 1;
-      transform: scale(1.2);
-    }
-  }
-
-  @keyframes beeFly {
-    0% {
-      transform: translateX(0) translateY(0) rotate(0deg);
-    }
-    5% {
-      transform: translateX(25%) translateY(-10px) rotate(10deg);
-    }
-    25% {
-      transform: translateX(50%) translateY(10px) rotate(-10deg);
-    }
-    50% {
-      transform: translateX(75%) translateY(-5px) rotate(5deg);
-    }
-    75% {
-      transform: translateX(100%) translateY(10px) rotate(-5deg);
-    }
-    100% {
-      transform: translateX(120vw) translateY(0) rotate(0deg);
     }
   }
 
@@ -623,7 +575,77 @@ main {
   }
 }
 
-////////
+main {
+  display: flex;
+}
+
+#heroPage {
+  display: none;
+}
+
+///////////////////////////////////////////////////
+//? Animations from Section Curtain
+@keyframes floatCurtain {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-15px);
+  }
+}
+
+@keyframes floatSlow {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(20px);
+  }
+}
+
+@keyframes floatBalloon {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-30px) rotate(5deg);
+  }
+}
+
+@keyframes twinkle {
+  0% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+@keyframes beeFly {
+  0% {
+    transform: translateX(0) translateY(0) rotate(0deg);
+  }
+  5% {
+    transform: translateX(25%) translateY(-10px) rotate(10deg);
+  }
+  25% {
+    transform: translateX(50%) translateY(10px) rotate(-10deg);
+  }
+  50% {
+    transform: translateX(75%) translateY(-5px) rotate(5deg);
+  }
+  75% {
+    transform: translateX(100%) translateY(10px) rotate(-5deg);
+  }
+  100% {
+    transform: translateX(120vw) translateY(0) rotate(0deg);
+  }
+}
+///////////////////////////////////////////////////
+//? Others animations
 @keyframes flyAllScreen {
   0% {
     transform: translate(0, 0) rotate(0deg) scaleX(1);

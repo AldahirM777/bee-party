@@ -10,29 +10,19 @@ window.addEventListener("scroll", () => {
   const translateY = scrollY * 0.8;
 
   imgStart.style.transform = `translate(${translateX}px, ${translateY}px)`;
-});
 
-//? programación del título principal
-const titleMain = document.getElementById("titleMain");
+  const rect = imgStart.getBoundingClientRect();
 
-window.addEventListener("scroll", () => {
-  const scrollY = window.scrollY;
-  const triggerHeight = window.innerHeight - 160;
-  const fixedOffset = 0;
+  const isOutOfView =
+    rect.bottom < 0 || // se fue hacia arriba
+    rect.top > window.innerHeight || // se fue hacia abajo
+    rect.right < 0 || // se fue hacia la izquierda
+    rect.left > window.innerWidth;
 
-  if (scrollY >= triggerHeight) {
-    titleMain.style.position = "fixed";
-    titleMain.style.top = `${fixedOffset}px`;
-    titleMain.style.left = "50%";
-    titleMain.style.transform = "translateX(-50%)";
-    titleMain.style.zIndex = "10";
+  if (isOutOfView) {
+    imgStart.style.display = "none";
   } else {
-    // Vuelve a la posición normal si subes
-    titleMain.style.position = "relative";
-    titleMain.style.top = "";
-    titleMain.style.left = "";
-    titleMain.style.transform = "";
-    titleMain.style.zIndex = "";
+    imgStart.style.display = "block";
   }
 });
 
@@ -86,7 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 //? programación del botón de la invitación
 btnStart.addEventListener("click", () => {
-  audio.play();
+  //! audio.play();
 
   const bee1 = document.querySelector("#bee1");
   const bee2 = document.querySelector("#bee2");

@@ -5,11 +5,14 @@
   box-sizing: border-box;
 }
 
-html {
-  background-color: #fff0f5;
-}
 html ::-webkit-scrollbar {
-  width: 0;
+  display: none;
+}
+
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  width: 100vw;
 }
 
 .float-imgs {
@@ -17,13 +20,16 @@ html ::-webkit-scrollbar {
 }
 .float-imgs .img-cloud {
   position: fixed;
-  width: 100%;
+  width: 100vw;
+  max-width: 100vw;
   height: 19vh;
   z-index: 1;
 }
 .float-imgs .img-footer {
   position: fixed;
   bottom: 0;
+  width: 100vw;
+  max-width: 100vw;
   width: 100%;
   height: 10vh;
   z-index: 1;
@@ -114,7 +120,7 @@ html ::-webkit-scrollbar {
 #heroPage .containerImgs img#bee2 {
   display: none;
   width: 35%;
-  position: absolute;
+  position: fixed;
   animation: flyAllScreen 4s ease-in-out forwards;
   pointer-events: none;
   z-index: 5;
@@ -208,6 +214,9 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  position: relative;
+  width: 100vw;
+  max-width: 100vw;
 }
 main .background {
   position: fixed;
@@ -226,8 +235,10 @@ main .start {
   flex-direction: column;
   height: 100vh;
   width: 100%;
+  position: relative;
 }
 main .start img {
+  position: absolute;
   width: 100%;
 }
 main .party-curtain {
@@ -332,10 +343,8 @@ main .party-curtain .containerImgs .cloud {
 }
 main .party-curtain .containerInfo {
   position: relative;
-  z-index: 2;
   text-align: center;
   padding: 6vh 2rem;
-  font-family: "Comic Sans MS", cursive;
   margin-top: 15vh;
 }
 main .party-curtain .containerInfo .info-card {
@@ -348,67 +357,15 @@ main .party-curtain .containerInfo .info-card {
   color: #633a27;
 }
 main .party-curtain .containerInfo .info-card h2 {
+  font-size: "Fredoka One", cursive;
   font-size: 2rem;
   color: #d2691e;
   margin-bottom: 0.5rem;
 }
 main .party-curtain .containerInfo .info-card p {
+  font-family: "Quicksand", sans-serif;
   font-size: 1.2rem;
   margin: 0.3rem 0;
-}
-@keyframes floatCurtain {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(-15px);
-  }
-}
-@keyframes floatSlow {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(20px);
-  }
-}
-@keyframes floatBalloon {
-  0%, 100% {
-    transform: translateY(0) rotate(0deg);
-  }
-  50% {
-    transform: translateY(-30px) rotate(5deg);
-  }
-}
-@keyframes twinkle {
-  0% {
-    opacity: 0.5;
-    transform: scale(1);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1.2);
-  }
-}
-@keyframes beeFly {
-  0% {
-    transform: translateX(0) translateY(0) rotate(0deg);
-  }
-  5% {
-    transform: translateX(25%) translateY(-10px) rotate(10deg);
-  }
-  25% {
-    transform: translateX(50%) translateY(10px) rotate(-10deg);
-  }
-  50% {
-    transform: translateX(75%) translateY(-5px) rotate(5deg);
-  }
-  75% {
-    transform: translateX(100%) translateY(10px) rotate(-5deg);
-  }
-  100% {
-    transform: translateX(120vw) translateY(0) rotate(0deg);
-  }
 }
 main .info {
   display: flex;
@@ -548,6 +505,68 @@ main .beeEnd {
   animation: floatBeeFlowerSpecial 5s ease-in-out infinite;
 }
 
+main {
+  display: flex;
+}
+
+#heroPage {
+  display: none;
+}
+
+@keyframes floatCurtain {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-15px);
+  }
+}
+@keyframes floatSlow {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(20px);
+  }
+}
+@keyframes floatBalloon {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-30px) rotate(5deg);
+  }
+}
+@keyframes twinkle {
+  0% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+@keyframes beeFly {
+  0% {
+    transform: translateX(0) translateY(0) rotate(0deg);
+  }
+  5% {
+    transform: translateX(25%) translateY(-10px) rotate(10deg);
+  }
+  25% {
+    transform: translateX(50%) translateY(10px) rotate(-10deg);
+  }
+  50% {
+    transform: translateX(75%) translateY(-5px) rotate(5deg);
+  }
+  75% {
+    transform: translateX(100%) translateY(10px) rotate(-5deg);
+  }
+  100% {
+    transform: translateX(120vw) translateY(0) rotate(0deg);
+  }
+}
 @keyframes flyAllScreen {
   0% {
     transform: translate(0, 0) rotate(0deg) scaleX(1);

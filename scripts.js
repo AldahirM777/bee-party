@@ -1,4 +1,17 @@
 // scripts.js
+
+//? Animación de la imagen del start
+const imgStart = document.getElementById("imgStart");
+
+window.addEventListener("scroll", () => {
+  const scrollY = window.scrollY;
+
+  const translateX = scrollY * 0.8;
+  const translateY = scrollY * 0.8;
+
+  imgStart.style.transform = `translate(${translateX}px, ${translateY}px)`;
+});
+
 //? programación del título principal
 const titleMain = document.getElementById("titleMain");
 
@@ -41,47 +54,35 @@ musicButton.addEventListener("click", () => {
   }
 });
 
-//! Pendiente de programar para mejor tiempo de espera de carga
-/*
-//? Saber si es la primera vez que visita la página y determinar el tiempo de espera
 document.addEventListener("DOMContentLoaded", () => {
+  // Detectar si ya ha visitado la página
   const hasVisited = localStorage.getItem("visited") === "true";
 
+  // Tiempo de espera: 10s en la primera visita, 2s después
   const delay = hasVisited ? 2000 : 10000;
-});
 
-//? si es la primera vez que visita la página, mostrar el loader
-/*
-if (!hasVisited) {
+  // Obtener elementos
   const loader = document.getElementById("loader");
+  const btnStart = document.getElementById("btnStart");
+
+  // Mostrar loader
   loader.style.display = "flex";
 
+  // Inhabilitar botón
+  btnStart.disabled = true;
+
+  // Esperar y luego ocultar el loader y habilitar botón
   setTimeout(() => {
     loader.style.display = "none";
-    localStorage.setItem("visited", "true");
+    btnStart.disabled = false;
+    btnStart.innerHTML = "Cargar invitación";
+
+    // Guardar que ya visitó la página
+    if (!hasVisited) {
+      localStorage.setItem("visited", "true");
+    }
   }, delay);
-} else {
-  const loader = document.getElementById("loader");
-
-  setTimeout(() => {
-    loader.style.display = "none";
-  }, delay);
-}
-*/
-
-/////////////////////////////////////////////////
-//! Provicional
-//? Mostrar el loader por 2 segundo
-
-const btnStart = document.getElementById("btnStart");
-const loader = document.getElementById("loader");
-const delay = 2000;
-/////////////////////////////////////////////////
-
-setTimeout(() => {
-  loader.style.display = "none";
-  btnStart.innerHTML = "Cargar la invitación";
-}, delay);
+});
 
 //? programación del botón de la invitación
 btnStart.addEventListener("click", () => {

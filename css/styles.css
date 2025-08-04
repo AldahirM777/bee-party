@@ -208,112 +208,6 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /*
-  .party-curtain {
-    position: relative;
-    overflow: hidden;
-    background: linear-gradient(to bottom, #fff0f5 0%, #ffe6f0 100%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    .curtain-content {
-      position: relative;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      background-color: #333;
-
-      .party-title {
-        font-family: $title-font;
-        font-size: 2.5rem;
-        color: #ff69b4;
-        text-align: center;
-        margin-top: 10vh;
-        animation: bounceIn 1s ease-out;
-        z-index: 2;
-      }
-
-      .balloon {
-        position: absolute;
-        width: 80px;
-        animation: float 5s ease-in-out infinite;
-
-        &.balloon1 {
-          left: 10%;
-          top: 65%;
-          animation-delay: 0s;
-        }
-
-        &.balloon2 {
-          left: 45%;
-          top: 70%;
-          animation-delay: 0.5s;
-        }
-
-        &.balloon3 {
-          right: 15%;
-          top: 60%;
-          animation-delay: 1s;
-        }
-      }
-
-      .bee-fly {
-        position: absolute;
-        width: 100px;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        animation: circle-fly 10s linear infinite;
-      }
-
-      .confetti-layer {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        background-image: url("/imgs/confetti.png");
-        background-size: cover;
-        opacity: 0.4;
-        z-index: 1;
-        animation: float 8s ease-in-out infinite;
-      }
-
-      .floating {
-        position: absolute;
-        width: 40px;
-        animation: slow-float 7s ease-in-out infinite;
-
-        &.star1 {
-          top: 30%;
-          left: 20%;
-        }
-
-        &.heart1 {
-          top: 40%;
-          right: 10%;
-        }
-
-        &.candy1 {
-          top: 60%;
-          left: 35%;
-        }
-
-        &.flower1 {
-          top: 20%;
-          right: 25%;
-        }
-
-        &.toy1 {
-          bottom: 15%;
-          left: 50%;
-          transform: translateX(-50%);
-        }
-      }
-    }
-  }
-    */
 }
 main .background {
   position: fixed;
@@ -330,62 +224,191 @@ main .start {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 110vh;
+  height: 100vh;
   width: 100%;
-  display: none;
-  background-color: #333;
 }
-main .start .letters {
-  margin-top: 5vh;
-  display: flex;
-  justify-content: center;
-  z-index: 2;
+main .start img {
+  width: 100%;
 }
-main .start .letters span {
-  font-family: "Fredoka One", cursive;
-  font-size: 2.5rem;
-  margin: 0 2px;
-  display: inline-block;
-  animation: wave 3.5s ease-in-out infinite;
+main .party-curtain {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
 }
-main .start .letters span:nth-child(odd) {
-  color: #ff69b4;
+main .party-curtain .containerImgs {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
 }
-main .start .letters span:nth-child(even) {
-  color: #d87093;
+main .party-curtain .containerImgs .decorations img {
+  position: absolute;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  pointer-events: none;
 }
-main .start .letters .letter1 {
+main .party-curtain .containerImgs .balloon {
+  width: 80px;
+  animation: floatBalloon 6s ease-in-out infinite;
+}
+main .party-curtain .containerImgs .balloon.balloon1 {
+  top: 20%;
+  left: 5%;
   animation-delay: 0s;
 }
-main .start .letters .letter2 {
-  animation-delay: 0.1s;
-}
-main .start .letters .letter3 {
-  animation-delay: 0.2s;
-}
-main .start .letters .letter4 {
-  animation-delay: 0.3s;
-}
-main .start .letters .letter5 {
-  animation-delay: 0.4s;
-}
-main .start .letters .letter6 {
-  animation-delay: 0.5s;
-}
-main .start .letters .letter7 {
-  animation-delay: 0.6s;
-}
-main .start .letters .letter8 {
-  animation-delay: 0.7s;
-}
-main .start .letters .letter9 {
-  animation-delay: 0.8s;
-}
-main .start .letters .letter10 {
-  animation-delay: 0.9s;
-}
-main .start .letters .letter11 {
+main .party-curtain .containerImgs .balloon.balloon2 {
+  top: 25%;
+  left: 35%;
   animation-delay: 1s;
+}
+main .party-curtain .containerImgs .balloon.balloon3 {
+  top: 15%;
+  left: 85%;
+  animation-delay: 2s;
+}
+main .party-curtain .containerImgs .balloon.balloon4 {
+  top: 35%;
+  left: 65%;
+  animation-delay: 3s;
+}
+main .party-curtain .containerImgs .balloon.balloon5 {
+  bottom: 25%;
+  right: 35%;
+  animation-delay: 3s;
+}
+main .party-curtain .containerImgs .balloon.balloon6 {
+  top: 35%;
+  left: 2%;
+  animation-delay: 3s;
+}
+main .party-curtain .containerImgs .flower {
+  width: 50px;
+  animation: floatCurtain 4s ease-in-out infinite alternate;
+}
+main .party-curtain .containerImgs .flower.flower1 {
+  bottom: 20%;
+  left: 10%;
+}
+main .party-curtain .containerImgs .flower.flower2 {
+  top: 70%;
+  left: 30%;
+}
+main .party-curtain .containerImgs .flower.flower3 {
+  top: 65%;
+  left: 70%;
+}
+main .party-curtain .containerImgs .flower.flower4 {
+  bottom: 15%;
+  right: 20%;
+}
+main .party-curtain .containerImgs .candy {
+  width: 40px;
+  animation: floatCurtain 5s ease-in-out infinite alternate;
+}
+main .party-curtain .containerImgs .candy.candy1 {
+  bottom: 10%;
+  left: 15%;
+}
+main .party-curtain .containerImgs .bee-fly {
+  width: 160px;
+  top: 45%;
+  left: -35%;
+  animation: beeFly 12s linear infinite;
+}
+main .party-curtain .containerImgs .butterfly {
+  width: 70px;
+  top: 30%;
+  left: 80%;
+  animation: floatCurtain 6s ease-in-out infinite alternate;
+}
+main .party-curtain .containerImgs .cloud {
+  width: 100px;
+  top: 5%;
+  left: 20%;
+  opacity: 0.7;
+  animation: floatSlow 20s linear infinite alternate;
+}
+main .party-curtain .containerInfo {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 6vh 2rem;
+  font-family: "Comic Sans MS", cursive;
+  margin-top: 15vh;
+}
+main .party-curtain .containerInfo .info-card {
+  background: rgba(255, 255, 255, 0.8);
+  margin: 2rem auto;
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  color: #633a27;
+}
+main .party-curtain .containerInfo .info-card h2 {
+  font-size: 2rem;
+  color: #d2691e;
+  margin-bottom: 0.5rem;
+}
+main .party-curtain .containerInfo .info-card p {
+  font-size: 1.2rem;
+  margin: 0.3rem 0;
+}
+@keyframes floatCurtain {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-15px);
+  }
+}
+@keyframes floatSlow {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(20px);
+  }
+}
+@keyframes floatBalloon {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-30px) rotate(5deg);
+  }
+}
+@keyframes twinkle {
+  0% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+@keyframes beeFly {
+  0% {
+    transform: translateX(0) translateY(0) rotate(0deg);
+  }
+  5% {
+    transform: translateX(25%) translateY(-10px) rotate(10deg);
+  }
+  25% {
+    transform: translateX(50%) translateY(10px) rotate(-10deg);
+  }
+  50% {
+    transform: translateX(75%) translateY(-5px) rotate(5deg);
+  }
+  75% {
+    transform: translateX(100%) translateY(10px) rotate(-5deg);
+  }
+  100% {
+    transform: translateX(120vw) translateY(0) rotate(0deg);
+  }
 }
 main .info {
   display: flex;
@@ -393,13 +416,13 @@ main .info {
   align-items: center;
   flex-direction: column;
   width: 100%;
-  margin: 15vh 0 5vh 0;
+  margin-bottom: 5vh;
 }
 main .info .img-bee1 {
   width: 40%;
-  transform: translateY(1.2rem);
+  transform: translateY(3rem);
   animation: floatBeeSpecial 5s ease-in-out infinite;
-  animation-delay: 4s;
+  animation-delay: 2s;
 }
 main .info .img-reinbow {
   width: 100%;
@@ -454,23 +477,37 @@ main .info .container-imgs .img-float {
 }
 main .info .container-imgs .img-float.img1 {
   right: 0;
-  animation: none;
   width: 25%;
   z-index: -1;
   transform: translateY(-1.5rem);
 }
 main .info .container-imgs .img-float.img2 {
   left: 5%;
-  animation-delay: 2s;
-  animation: float 5s ease-in-out infinite;
+  transform: translateY(2rem);
+  animation: floatFlowerSpecial1 5s ease-in-out infinite;
+  animation-delay: 10s;
+}
+main .info .container-imgs .img-float.img4 {
+  right: 5%;
+  animation: floatFlowerSpecial3 5s ease-in-out infinite;
 }
 main .info .container-imgs .img-float.img3 {
   right: 5%;
-  animation: floatFlowerSpecial 5s ease-in-out infinite;
+  transform: translateY(10rem);
+  animation: floatFlowerSpecial2 5s ease-in-out infinite;
+  animation-delay: 10s;
 }
-main .info h2 {
+main .info .time {
   font-family: "Fredoka One", cursive;
   font-size: 2rem;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #ad95dd;
+}
+main .info .location-title {
+  font-family: "Fredoka One", cursive;
+  font-size: 1.5rem;
   color: #ff69b4;
   text-align: center;
 }
@@ -557,14 +594,6 @@ main .beeEnd {
     opacity: 1;
   }
 }
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-20px);
-  }
-}
 @keyframes floatBeeFlowerSpecial {
   0%, 100% {
     transform: translateY(0);
@@ -575,18 +604,34 @@ main .beeEnd {
 }
 @keyframes floatBeeSpecial {
   0%, 100% {
-    transform: translateY(1.5rem);
+    transform: translateY(3rem);
   }
   50% {
-    transform: translateY(0rem);
+    transform: translateY(1rem) rotate(10deg);
   }
 }
-@keyframes floatFlowerSpecial {
+@keyframes floatFlowerSpecial1 {
   0%, 100% {
-    transform: translateY(9rem);
+    transform: translateY(2rem);
   }
   50% {
-    transform: translateY(11rem);
+    transform: translateY(1rem) rotate(40deg);
+  }
+}
+@keyframes floatFlowerSpecial2 {
+  0%, 100% {
+    transform: translateY(10rem);
+  }
+  50% {
+    transform: translateY(9rem) rotate(-40deg);
+  }
+}
+@keyframes floatFlowerSpecial3 {
+  0%, 100% {
+    transform: translateY(-10.5rem);
+  }
+  50% {
+    transform: translateY(-11rem) rotate(50deg);
   }
 }
 @keyframes btnanimation {

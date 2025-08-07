@@ -90,6 +90,7 @@ btnStart.addEventListener("click", () => {
 
   // Paso 0: Estado inicial
   bee1.style.display = "none";
+  heroPage.style.height = "100vh";
   btnStart.style.display = "none";
   bee2.style.display = "block";
   heroTitle.style.display = "none";
@@ -120,7 +121,7 @@ btnStart.addEventListener("click", () => {
   setTimeout(() => {
     // comenzamos a los 6s en lugar de 8s
     fireworksCanvas.style.display = "none";
-  }, 8000);
+  }, 10000);
 });
 
 const canvas = document.getElementById("fireworksCanvas");

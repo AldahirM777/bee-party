@@ -223,15 +223,34 @@ main .start {
   flex-direction: column;
   height: 100vh;
   width: 100%;
+  position: relative;
 }
-main .start img {
+main .start #imgStart {
   width: 100%;
+}
+main .start .balloonStart1,
+main .start .balloonStart2 {
+  position: absolute;
+  width: 100px;
+  bottom: -10%;
+  animation: floatBalloon 6s ease-in-out infinite;
+}
+main .start .beeStart {
+  width: 40%;
+  animation: floatBeeSpecial 5s ease-in-out infinite;
+}
+main .start .balloonStart1 {
+  left: 2%;
+}
+main .start .balloonStart2 {
+  right: 0%;
 }
 main .party-curtain {
   position: relative;
   width: 100%;
   min-height: 100vh;
   overflow: hidden;
+  margin-top: -10vh;
 }
 main .party-curtain .containerImgs {
   position: absolute;
@@ -247,12 +266,13 @@ main .party-curtain .containerImgs .decorations img {
   pointer-events: none;
 }
 main .party-curtain .containerImgs .balloon {
-  width: 80px;
+  width: 60px;
   animation: floatBalloon 6s ease-in-out infinite;
 }
 main .party-curtain .containerImgs .balloon.balloon1 {
   top: 20%;
   left: 5%;
+  width: 40px;
   animation-delay: 0s;
 }
 main .party-curtain .containerImgs .balloon.balloon2 {
@@ -305,7 +325,7 @@ main .party-curtain .containerImgs .candy {
   animation: floatCurtain 5s ease-in-out infinite alternate;
 }
 main .party-curtain .containerImgs .candy.candy1 {
-  bottom: 10%;
+  bottom: 30%;
   left: 15%;
 }
 main .party-curtain .containerImgs .bee-fly {
@@ -313,19 +333,6 @@ main .party-curtain .containerImgs .bee-fly {
   top: 45%;
   left: -35%;
   animation: beeFly 12s linear infinite;
-}
-main .party-curtain .containerImgs .butterfly {
-  width: 70px;
-  top: 30%;
-  left: 80%;
-  animation: floatCurtain 6s ease-in-out infinite alternate;
-}
-main .party-curtain .containerImgs .cloud {
-  width: 100px;
-  top: 5%;
-  left: 20%;
-  opacity: 0.7;
-  animation: floatSlow 20s linear infinite alternate;
 }
 main .party-curtain .containerInfo {
   position: relative;
@@ -359,6 +366,7 @@ main .info {
   align-items: center;
   flex-direction: column;
   width: 100%;
+  margin-top: -10vh;
   margin-bottom: 5vh;
 }
 main .info .img-bee1 {

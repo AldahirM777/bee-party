@@ -10,6 +10,8 @@ $body-font: "Quicksand", sans-serif;
 }
 
 html {
+  background-color: #fff0f5;
+
   ::-webkit-scrollbar {
     display: none;
   }
@@ -101,7 +103,6 @@ html {
   height: 100vh;
   margin-top: -10vh;
   width: 100%;
-  background-color: #fff0f5;
 
   .containerMain {
     display: flex;
@@ -573,7 +574,7 @@ main {
 
 //todos Debuging
 
-/*
+
 main {
   display: flex;
 }
@@ -581,7 +582,19 @@ main {
 #heroPage {
   display: none;
 }
-*/
+
+
+.animated-element {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1.5s ease-out, transform 2s ease-out;
+  will-change: opacity, transform;
+}
+
+.animated-element.show {
+  opacity: 1;
+  transform: translateY(0);
+}
 
 ///////////////////////////////////////////////////
 //? Animations from Section Curtain
@@ -590,7 +603,7 @@ main {
     transform: translateY(0);
   }
   100% {
-    transform: translateY(-15px);
+    transform: translateY(-2.5rem);
   }
 }
 

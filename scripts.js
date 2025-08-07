@@ -184,3 +184,22 @@ function launchRandomFirework() {
 
 setInterval(launchRandomFirework, 1500);
 updateParticles();
+
+//? Ainmacion de salida
+const observer = new IntersectionObserver(
+  (entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+        observer.unobserve(entry.target);
+      }
+    });
+  },
+  {
+    threshold: 0.6,
+  }
+);
+
+document.querySelectorAll(".animated-element").forEach((el) => {
+  observer.observe(el);
+});

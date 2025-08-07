@@ -5,6 +5,9 @@
   box-sizing: border-box;
 }
 
+html {
+  background-color: #fff0f5;
+}
 html ::-webkit-scrollbar {
   display: none;
 }
@@ -87,7 +90,6 @@ html ::-webkit-scrollbar {
   height: 100vh;
   margin-top: -10vh;
   width: 100%;
-  background-color: #fff0f5;
 }
 #heroPage .containerMain {
   display: flex;
@@ -499,7 +501,6 @@ main .beeEnd {
   animation: floatBeeFlowerSpecial 5s ease-in-out infinite;
 }
 
-/*
 main {
   display: flex;
 }
@@ -507,13 +508,25 @@ main {
 #heroPage {
   display: none;
 }
-*/
+
+.animated-element {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1.5s ease-out, transform 2s ease-out;
+  will-change: opacity, transform;
+}
+
+.animated-element.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 @keyframes floatCurtain {
   0% {
     transform: translateY(0);
   }
   100% {
-    transform: translateY(-15px);
+    transform: translateY(-2.5rem);
   }
 }
 @keyframes floatSlow {

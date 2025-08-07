@@ -501,6 +501,7 @@ main .beeEnd {
   animation: floatBeeFlowerSpecial 5s ease-in-out infinite;
 }
 
+/*
 main {
   display: flex;
 }
@@ -508,7 +509,7 @@ main {
 #heroPage {
   display: none;
 }
-
+*/
 .animated-element {
   opacity: 0;
   transform: translateY(30px);
